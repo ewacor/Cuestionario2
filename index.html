@@ -1,160 +1,169 @@
 
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Cuestionario Diagnóstico de Motores</title>
-<style>
-    body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; }
-    h1 { text-align: center; }
-    .question { margin-bottom: 20px; }
-    .options label { display: block; margin-bottom: 5px; }
-    .result { font-weight: bold; margin-top: 10px; }
-    button { margin-top: 10px; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cuestionario Diagnóstico de Motores</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    label, input[type="text"], .question {
+      display: block;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px;
+      width: 100%;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      font-size: 16px;
+    }
   </style>
-<meta content="width=device-width, initial-scale=1" name="viewport"/><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/></head>
-<body><div class="container mt-4"><div class="mb-3"><label class="form-label" for="studentName">Nombre del estudiante:</label><input class="form-control" id="studentName" name="studentName" required="True" type="text"/></div>
-<h1>Cuestionario Diagnóstico de Motores</h1>
-<form id="quizForm">
-<div class="question">
-<p>1. ¿Qué instrumento es más adecuado para medir la carrera del pistón en un motor?</p>
-<div class="options">
-<label><input name="q1" type="radio" value="A"/> A) Calibrador Vernier</label>
-<label><input name="q1" type="radio" value="B"/> B) Micrómetro</label>
-<label><input name="q1" type="radio" value="C"/> C) Cinta métrica</label>
-<label><input name="q1" type="radio" value="D"/> D) Manómetro</label>
-</div>
-</div>
-<div class="question">
-<p>2. ¿Cuál es la fórmula más adecuada para calcular el área de contacto entre la culata y el bloque si la superficie es circular?</p>
-<div class="options">
-<label><input name="q2" type="radio" value="A"/> A) A = l × w</label>
-<label><input name="q2" type="radio" value="B"/> B) A = π × r²</label>
-<label><input name="q2" type="radio" value="C"/> C) A = 2πr</label>
-<label><input name="q2" type="radio" value="D"/> D) A = ½ × b × h</label>
-</div>
-</div>
-<div class="question">
-<p>3. Si se mide el volumen de la cámara de combustión con líquido calibrado, ¿qué unidad se debe usar para registrar el resultado?</p>
-<div class="options">
-<label><input name="q3" type="radio" value="A"/> A) Milímetros</label>
-<label><input name="q3" type="radio" value="B"/> B) Centímetros cuadrados</label>
-<label><input name="q3" type="radio" value="C"/> C) Centímetros cúbicos</label>
-<label><input name="q3" type="radio" value="D"/> D) Litros por segundo</label>
-</div>
-</div>
-<div class="question">
-<p>4. Un cilindro presenta una diferencia de 0.12 mm entre el diámetro superior e inferior. ¿Qué indica esto?</p>
-<div class="options">
-<label><input name="q4" type="radio" value="A"/> A) Que el cilindro está nuevo</label>
-<label><input name="q4" type="radio" value="B"/> B) Que hay desgaste uniforme</label>
-<label><input name="q4" type="radio" value="C"/> C) Que hay desgaste cónico</label>
-<label><input name="q4" type="radio" value="D"/> D) Que el pistón está dañado</label>
-</div>
-</div>
-<div class="question">
-<p>5. ¿Qué fórmula se usa para calcular el volumen de aceite en un cárter rectangular?</p>
-<div class="options">
-<label><input name="q5" type="radio" value="A"/> A) V = l + w + h</label>
-<label><input name="q5" type="radio" value="B"/> B) V = l × w × h</label>
-<label><input name="q5" type="radio" value="C"/> C) V = πr²h</label>
-<label><input name="q5" type="radio" value="D"/> D) V = ½ × b × h</label>
-</div>
-</div>
-<div class="question">
-<p>6. ¿Por qué es importante medir el área de contacto entre la válvula y su asiento?</p>
-<div class="options">
-<label><input name="q6" type="radio" value="A"/> A) Para calcular la potencia del motor</label>
-<label><input name="q6" type="radio" value="B"/> B) Para verificar el torque de apriete</label>
-<label><input name="q6" type="radio" value="C"/> C) Para asegurar un buen sellado y compresión</label>
-<label><input name="q6" type="radio" value="D"/> D) Para medir la temperatura de combustión</label>
-</div>
-</div>
-<div class="question">
-<p>7. ¿Qué sucede si la longitud de la biela está fuera de especificación?</p>
-<div class="options">
-<label><input name="q7" type="radio" value="A"/> A) Aumenta la presión del aceite</label>
-<label><input name="q7" type="radio" value="B"/> B) Se reduce el volumen de la cámara</label>
-<label><input name="q7" type="radio" value="C"/> C) Se altera el tiempo de apertura de válvulas</label>
-<label><input name="q7" type="radio" value="D"/> D) Se modifica la carrera del pistón</label>
-</div>
-</div>
-<div class="question">
-<p>8. ¿Qué parámetro se puede calcular a partir del área del pistón?</p>
-<div class="options">
-<label><input name="q8" type="radio" value="A"/> A) El torque del cigüeñal</label>
-<label><input name="q8" type="radio" value="B"/> B) La presión de combustión</label>
-<label><input name="q8" type="radio" value="C"/> C) La velocidad del motor</label>
-<label><input name="q8" type="radio" value="D"/> D) El consumo de aceite</label>
-</div>
-</div>
-<div class="question">
-<p>9. ¿Qué magnitudes se necesitan para calcular el volumen desplazado por el pistón?</p>
-<div class="options">
-<label><input name="q9" type="radio" value="A"/> A) Diámetro del cigüeñal y número de válvulas</label>
-<label><input name="q9" type="radio" value="B"/> B) Diámetro del cilindro y carrera del pistón</label>
-<label><input name="q9" type="radio" value="C"/> C) Longitud de la biela y tipo de aceite</label>
-<label><input name="q9" type="radio" value="D"/> D) Área de la culata y presión de combustión</label>
-</div>
-</div>
-<div class="question">
-<p>10. Si el volumen medido en la cámara de combustión es mayor al especificado, ¿qué puede indicar?</p>
-<div class="options">
-<label><input name="q10" type="radio" value="A"/> A) Que el motor tiene mayor potencia</label>
-<label><input name="q10" type="radio" value="B"/> B) Que hay acumulación de carbonilla</label>
-<label><input name="q10" type="radio" value="C"/> C) Que hay desgaste en el pistón o culata</label>
-<label><input name="q10" type="radio" value="D"/> D) Que el sistema de refrigeración está fallando</label>
-</div>
-</div>
-<button onclick="checkAnswers()" type="button">Enviar respuestas</button>
-<div class="result" id="result"></div>
-</form>
-<script>
-    function checkAnswers() {
+</head>
+<body>
+  <h2>Cuestionario Diagnóstico de Motores</h2>
+  <form id="quizForm">
+    <label for="nombre">Nombre del estudiante (obligatorio):</label>
+    <input type="text" id="nombre" name="nombre" required />
+
+    <div class="question">
+      <label>1. ¿Qué instrumento es más adecuado para medir la carrera del pistón en un motor?</label>
+      <input type="checkbox" name="q1" value="A"> A) Calibrador Vernier<br/>
+      <input type="checkbox" name="q1" value="B"> B) Micrómetro<br/>
+      <input type="checkbox" name="q1" value="C"> C) Cinta métrica<br/>
+      <input type="checkbox" name="q1" value="D"> D) Manómetro<br/>
+    </div>
+
+    <div class="question">
+      <label>2. ¿Cuál es la función principal del árbol de levas en un motor?</label>
+      <input type="checkbox" name="q2" value="A"> A) Regular la mezcla de aire y combustible<br/>
+      <input type="checkbox" name="q2" value="B"> B) Controlar la apertura y cierre de válvulas<br/>
+      <input type="checkbox" name="q2" value="C"> C) Medir la presión del aceite<br/>
+      <input type="checkbox" name="q2" value="D"> D) Enfriar el motor<br/>
+    </div>
+
+    <div class="question">
+      <label>3. ¿Qué componente convierte la energía química del combustible en energía mecánica?</label>
+      <input type="checkbox" name="q3" value="A"> A) Alternador<br/>
+      <input type="checkbox" name="q3" value="B"> B) Pistón<br/>
+      <input type="checkbox" name="q3" value="C"> C) Radiador<br/>
+      <input type="checkbox" name="q3" value="D"> D) Bujía<br/>
+    </div>
+
+    <div class="question">
+      <label>4. ¿Cuál es el propósito del sistema de lubricación en un motor?</label>
+      <input type="checkbox" name="q4" value="A"> A) Aumentar la temperatura del motor<br/>
+      <input type="checkbox" name="q4" value="B"> B) Reducir la fricción entre partes móviles<br/>
+      <input type="checkbox" name="q4" value="C"> C) Controlar la mezcla de combustible<br/>
+      <input type="checkbox" name="q4" value="D"> D) Generar energía eléctrica<br/>
+    </div>
+
+    <div class="question">
+      <label>5. ¿Qué tipo de motor utiliza bujías para iniciar la combustión?</label>
+      <input type="checkbox" name="q5" value="A"> A) Motor diésel<br/>
+      <input type="checkbox" name="q5" value="B"> B) Motor de gasolina<br/>
+      <input type="checkbox" name="q5" value="C"> C) Motor eléctrico<br/>
+      <input type="checkbox" name="q5" value="D"> D) Motor híbrido<br/>
+    </div>
+
+    <div class="question">
+      <label>6. ¿Qué elemento se encarga de enfriar el motor?</label>
+      <input type="checkbox" name="q6" value="A"> A) Alternador<br/>
+      <input type="checkbox" name="q6" value="B"> B) Radiador<br/>
+      <input type="checkbox" name="q6" value="C"> C) Bomba de aceite<br/>
+      <input type="checkbox" name="q6" value="D"> D) Filtro de aire<br/>
+    </div>
+
+    <div class="question">
+      <label>7. ¿Qué parte del motor se mueve hacia arriba y hacia abajo dentro del cilindro?</label>
+      <input type="checkbox" name="q7" value="A"> A) Cigüeñal<br/>
+      <input type="checkbox" name="q7" value="B"> B) Pistón<br/>
+      <input type="checkbox" name="q7" value="C"> C) Válvula<br/>
+      <input type="checkbox" name="q7" value="D"> D) Árbol de levas<br/>
+    </div>
+
+    <div class="question">
+      <label>8. ¿Qué componente almacena energía eléctrica en el vehículo?</label>
+      <input type="checkbox" name="q8" value="A"> A) Alternador<br/>
+      <input type="checkbox" name="q8" value="B"> B) Batería<br/>
+      <input type="checkbox" name="q8" value="C"> C) Motor de arranque<br/>
+      <input type="checkbox" name="q8" value="D"> D) Fusible<br/>
+    </div>
+
+    <div class="question">
+      <label>9. ¿Cuál es la función del carburador en motores antiguos?</label>
+      <input type="checkbox" name="q9" value="A"> A) Enfriar el motor<br/>
+      <input type="checkbox" name="q9" value="B"> B) Mezclar aire y combustible<br/>
+      <input type="checkbox" name="q9" value="C"> C) Generar chispa<br/>
+      <input type="checkbox" name="q9" value="D"> D) Lubricar el motor<br/>
+    </div>
+
+    <div class="question">
+      <label>10. ¿Qué sistema controla las emisiones contaminantes del motor?</label>
+      <input type="checkbox" name="q10" value="A"> A) Sistema de escape<br/>
+      <input type="checkbox" name="q10" value="B"> B) Sistema de refrigeración<br/>
+      <input type="checkbox" name="q10" value="C"> C) Sistema de lubricación<br/>
+      <input type="checkbox" name="q10" value="D"> D) Sistema eléctrico<br/>
+    </div>
+
+    <button type="button" onclick="generarPDF()">Generar y Descargar PDF</button>
+  </form>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    async function generarPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      const nombre = document.getElementById('nombre').value;
+      if (!nombre) {
+        alert("Por favor, ingrese el nombre del estudiante.");
+        return;
+      }
+
+      doc.text(`Cuestionario Diagnóstico de Motores`, 10, 10);
+      doc.text(`Nombre del estudiante: ${nombre}`, 10, 20);
+
       const correctAnswers = {
-        q1: "A", q2: "B", q3: "C", q4: "C", q5: "B",
-        q6: "C", q7: "D", q8: "B", q9: "B", q10: "C"
+        q1: ["A"],
+        q2: ["B"],
+        q3: ["B"],
+        q4: ["B"],
+        q5: ["B"],
+        q6: ["B"],
+        q7: ["B"],
+        q8: ["B"],
+        q9: ["B"],
+        q10: ["A"]
       };
-      let score = 0;
-      for (let q in correctAnswers) {
-        const selected = document.querySelector('input[name="' + q + '"]:checked');
-        if (selected && selected.value === correctAnswers[q]) {
-          score++;
+
+      let y = 30;
+      let correctCount = 0;
+
+      for (let i = 1; i <= 10; i++) {
+        const questionName = "q" + i;
+        const selected = Array.from(document.querySelectorAll(`input[name="${questionName}"]:checked`)).map(el => el.value);
+        doc.text(`${i}. Respuestas seleccionadas: ${selected.join(", ")}`, 10, y);
+        y += 10;
+
+        if (selected.length === correctAnswers[questionName].length &&
+            selected.every(val => correctAnswers[questionName].includes(val))) {
+          correctCount++;
         }
       }
-      document.getElementById("result").innerText = "Puntaje: " + score + " / 10";
+
+      doc.text(`Total de respuestas correctas: ${correctCount} de 10`, 10, y + 10);
+      doc.save(`cuestionario_${nombre}.pdf`);
     }
   </script>
-<button class="btn btn-primary w-100 mt-3" id="generatePDF" type="button">Enviar y generar PDF</button><a class="btn btn-success w-100 mt-2" href="#" id="whatsappShare" target="_blank">Enviar por WhatsApp</a></div><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script><script>
-document.getElementById("generatePDF").addEventListener("click", function () {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-    let y = 20;
-    const name = document.getElementById("studentName").value;
-    doc.setFontSize(14);
-    doc.text("Cuestionario - Diagnóstico de Motores", 20, y);
-    y += 10;
-    doc.text("Estudiante: " + name, 20, y);
-    y += 10;
-
-    const inputs = document.querySelectorAll("input, textarea, select");
-    inputs.forEach((input) => {
-        const label = input.previousElementSibling ? input.previousElementSibling.innerText : input.name;
-        const value = input.value || (input.checked ? "Sí" : "No");
-        if (label) {
-            y += 10;
-            doc.text(label + ": " + value, 20, y);
-        }
-    });
-
-    doc.save("cuestionario_respuestas.pdf");
-
-    // Enable WhatsApp button
-    const whatsappBtn = document.getElementById("whatsappShare");
-    const message = encodeURIComponent("Hola, aquí están mis respuestas al cuestionario.");
-    whatsappBtn.href = "https://wa.me/?text=" + message;
-});
-</script></body>
+</body>
 </html>
