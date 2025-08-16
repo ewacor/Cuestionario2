@@ -10,7 +10,7 @@
         .question { margin-bottom: 20px; }
         .result { font-weight: bold; margin-top: 20px; }
     </style>
-<meta content="width=device-width, initial-scale=1" name="viewport"/><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/></head>
+</head>
 <body>
 <h1>Cuestionario Diagnóstico de Motores</h1>
 <div class="question">
@@ -118,5 +118,27 @@
             }
         }
     </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script></body>
+<script>
+document.getElementById("formulario").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const studentName = document.getElementById("studentName").value;
+    const respuestas = Array.from(document.querySelectorAll("input, textarea, select"))
+        .filter(el => el.name && el.value)
+        .map(el => `${el.name}: ${el.value}`);
+
+    const pdfContent = [`Nombre del estudiante: ${studentName}`, "", ...respuestas];
+
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    let y = 10;
+    pdfContent.forEach(line => {
+        doc.text(line, 10, y);
+        y += 10;
+    });
+
+    doc.save("respuestas_cuestionario.pdf");
+});
+</script></body>
 </html>
