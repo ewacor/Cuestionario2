@@ -1,70 +1,122 @@
 
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cuestionario Interactivo</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<meta charset="utf-8"/>
+<title>Cuestionario Diagnóstico de Motores</title>
+<style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .question { margin-bottom: 20px; }
+        .result { font-weight: bold; margin-top: 20px; }
+    </style>
 </head>
-<body class="container py-4">
-  <h2 class="mb-4 text-center">Cuestionario</h2>
-  <form id="cuestionarioForm">
-    <div class="mb-3">
-      <label for="nombre" class="form-label">Nombre del estudiante:</label>
-      <input type="text" class="form-control" id="nombre" required>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">1. ¿Cuál es tu color favorito?</label>
-      <input type="text" class="form-control" id="respuesta1">
-    </div>
-    <div class="mb-3">
-      <label class="form-label">2. ¿Qué deporte practicas?</label>
-      <input type="text" class="form-control" id="respuesta2">
-    </div>
-    <div class="mb-3">
-      <label class="form-label">3. ¿Cuál es tu comida preferida?</label>
-      <input type="text" class="form-control" id="respuesta3">
-    </div>
-    <button type="submit" class="btn btn-primary w-100">Enviar y generar PDF</button>
-  </form>
-
-  <div class="mt-4 text-center" id="whatsappSection" style="display:none;">
-    <a id="whatsappLink" class="btn btn-success" target="_blank">Enviar por WhatsApp</a>
-  </div>
-
-  <script>
-    document.getElementById("cuestionarioForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const nombre = document.getElementById("nombre").value;
-      const r1 = document.getElementById("respuesta1").value;
-      const r2 = document.getElementById("respuesta2").value;
-      const r3 = document.getElementById("respuesta3").value;
-
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF();
-
-      doc.setFontSize(14);
-      doc.text(`Cuestionario - Estudiante: ${nombre}`, 10, 20);
-      doc.text(`1. ¿Cuál es tu color favorito?`, 10, 40);
-      doc.text(`Respuesta: ${r1}`, 10, 50);
-      doc.text(`2. ¿Qué deporte practicas?`, 10, 70);
-      doc.text(`Respuesta: ${r2}`, 10, 80);
-      doc.text(`3. ¿Cuál es tu comida preferida?`, 10, 100);
-      doc.text(`Respuesta: ${r3}`, 10, 110);
-
-      doc.save(`Cuestionario_${nombre}.pdf`);
-
-      const mensaje = encodeURIComponent(`Hola, aquí están mis respuestas al cuestionario:
-Nombre: ${nombre}
-1. ${r1}
-2. ${r2}
-3. ${r3}`);
-      const whatsappURL = `https://wa.me/?text=${mensaje}`;
-      document.getElementById("whatsappLink").href = whatsappURL;
-      document.getElementById("whatsappSection").style.display = "block";
-    });
-  </script>
+<body>
+<h1>Cuestionario Diagnóstico de Motores</h1>
+<div class="question">
+<p>1. ¿Qué instrumento es más adecuado para medir la carrera del pistón en un motor?</p>
+<input name="q1" type="radio" value="A"/> A) Calibrador Vernier<br/>
+<input name="q1" type="radio" value="B"/> B) Micrómetro<br/>
+<input name="q1" type="radio" value="C"/> C) Cinta métrica<br/>
+<input name="q1" type="radio" value="D"/> D) Manómetro<br/>
+</div>
+<div class="question">
+<p>2. ¿Cuál es la fórmula más adecuada para calcular el área de contacto entre la culata y el bloque si la superficie es circular?</p>
+<input name="q2" type="radio" value="A"/> A) A = l × w<br/>
+<input name="q2" type="radio" value="B"/> B) A = π × r²<br/>
+<input name="q2" type="radio" value="C"/> C) A = 2πr<br/>
+<input name="q2" type="radio" value="D"/> D) A = ½ × b × h<br/>
+</div>
+<div class="question">
+<p>3. Si se mide el volumen de la cámara de combustión con líquido calibrado, ¿qué unidad se debe usar para registrar el resultado?</p>
+<input name="q3" type="radio" value="A"/> A) Milímetros<br/>
+<input name="q3" type="radio" value="B"/> B) Centímetros cuadrados<br/>
+<input name="q3" type="radio" value="C"/> C) Centímetros cúbicos<br/>
+<input name="q3" type="radio" value="D"/> D) Litros por segundo<br/>
+</div>
+<div class="question">
+<p>4. Un cilindro presenta una diferencia de 0.12 mm entre el diámetro superior e inferior. ¿Qué indica esto?</p>
+<input name="q4" type="radio" value="A"/> A) Que el cilindro está nuevo<br/>
+<input name="q4" type="radio" value="B"/> B) Que hay desgaste uniforme<br/>
+<input name="q4" type="radio" value="C"/> C) Que hay desgaste cónico<br/>
+<input name="q4" type="radio" value="D"/> D) Que el pistón está dañado<br/>
+</div>
+<div class="question">
+<p>5. ¿Qué fórmula se usa para calcular el volumen de aceite en un cárter rectangular?</p>
+<input name="q5" type="radio" value="A"/> A) V = l + w + h<br/>
+<input name="q5" type="radio" value="B"/> B) V = l × w × h<br/>
+<input name="q5" type="radio" value="C"/> C) V = πr²h<br/>
+<input name="q5" type="radio" value="D"/> D) V = ½ × b × h<br/>
+</div>
+<div class="question">
+<p>6. ¿Por qué es importante medir el área de contacto entre la válvula y su asiento?</p>
+<input name="q6" type="radio" value="A"/> A) Para calcular la potencia del motor<br/>
+<input name="q6" type="radio" value="B"/> B) Para verificar el torque de apriete<br/>
+<input name="q6" type="radio" value="C"/> C) Para asegurar un buen sellado y compresión<br/>
+<input name="q6" type="radio" value="D"/> D) Para medir la temperatura de combustión<br/>
+</div>
+<div class="question">
+<p>7. ¿Qué sucede si la longitud de la biela está fuera de especificación?</p>
+<input name="q7" type="radio" value="A"/> A) Aumenta la presión del aceite<br/>
+<input name="q7" type="radio" value="B"/> B) Se reduce el volumen de la cámara<br/>
+<input name="q7" type="radio" value="C"/> C) Se altera el tiempo de apertura de válvulas<br/>
+<input name="q7" type="radio" value="D"/> D) Se modifica la carrera del pistón<br/>
+</div>
+<div class="question">
+<p>8. ¿Qué parámetro se puede calcular a partir del área del pistón?</p>
+<input name="q8" type="radio" value="A"/> A) El torque del cigüeñal<br/>
+<input name="q8" type="radio" value="B"/> B) La presión de combustión<br/>
+<input name="q8" type="radio" value="C"/> C) La velocidad del motor<br/>
+<input name="q8" type="radio" value="D"/> D) El consumo de aceite<br/>
+</div>
+<div class="question">
+<p>9. ¿Qué magnitudes se necesitan para calcular el volumen desplazado por el pistón?</p>
+<input name="q9" type="radio" value="A"/> A) Diámetro del cigüeñal y número de válvulas<br/>
+<input name="q9" type="radio" value="B"/> B) Diámetro del cilindro y carrera del pistón<br/>
+<input name="q9" type="radio" value="C"/> C) Longitud de la biela y tipo de aceite<br/>
+<input name="q9" type="radio" value="D"/> D) Área de la culata y presión de combustión<br/>
+</div>
+<div class="question">
+<p>10. Si el volumen medido en la cámara de combustión es mayor al especificado, ¿qué puede indicar?</p>
+<input name="q10" type="radio" value="A"/> A) Que el motor tiene mayor potencia<br/>
+<input name="q10" type="radio" value="B"/> B) Que hay acumulación de carbonilla<br/>
+<input name="q10" type="radio" value="C"/> C) Que hay desgaste en el pistón o culata<br/>
+<input name="q10" type="radio" value="D"/> D) Que el sistema de refrigeración está fallando<br/>
+</div>
+<div>
+<label for="student-name">Nombre del estudiante:</label><br/>
+<input id="student-name" placeholder="Escribe tu nombre aquí" style="width: 300px; padding: 5px;" type="text"/>
+</div>
+<button onclick="calcularResultado()" style="margin-top: 20px; padding: 10px;">Enviar y ver resultado</button>
+<p class="result" id="resultado"></p>
+<script>
+        function calcularResultado() {
+            const respuestasCorrectas = {
+                q1: "A",
+                q2: "B",
+                q3: "C",
+                q4: "C",
+                q5: "B",
+                q6: "C",
+                q7: "D",
+                q8: "B",
+                q9: "B",
+                q10: "C"
+            };
+            let puntaje = 0;
+            for (let i = 1; i <= 10; i++) {
+                const pregunta = document.querySelector('input[name="q' + i + '"]:checked');
+                if (pregunta && pregunta.value === respuestasCorrectas["q" + i]) {
+                    puntaje++;
+                }
+            }
+            const nombre = document.getElementById("student-name").value.trim();
+            if (nombre) {
+                document.getElementById("resultado").textContent = `Nombre: ${nombre} | Resultado: ${puntaje} de 10`;
+            } else {
+                document.getElementById("resultado").textContent = "Por favor, escribe tu nombre.";
+            }
+        }
+    </script>
 </body>
 </html>
